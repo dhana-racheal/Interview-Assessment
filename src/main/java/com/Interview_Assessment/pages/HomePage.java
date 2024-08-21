@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import com.Interview_Assessment.common.BasePage;
 import com.Interview_Assessment.common.ExcelUtils;
@@ -20,11 +21,12 @@ public class HomePage extends BasePage{
 	List<String> title_list;
 	List<String> loc_list;
 	List<String> category_list;
+
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
+
 	@FindBy(xpath = "//div[@class='post']")
 	private List<WebElement> home_feeds_list;
 	@FindBy(xpath = "//div[@class='location detail-item']//div[@class='name']")
@@ -39,39 +41,46 @@ public class HomePage extends BasePage{
 	private List<WebElement> location_list;
 	@FindBy(xpath = "//div[@class='category detail-item']/div")
 	private List<WebElement> category_name_list;
-	
+
 	public void scrollHomeFeeds() {
-		for(int i=0;i<4;i++) {
+		for (int i = 0; i < 4; i++) {
 			scrollIntoView(driver, home_feeds_list.get(i));
 		}
 	}
-	
+
 	public void verifyFeedLocation() {
-		List<String> desired_location = new ArrayList<>(Arrays.asList(new String[] {"Anna Nagar","Mylapore","T Nagar"}));
 		List<String> locations = new ArrayList<>();
-		for(int i=0;i<3;i++) {
+		SoftAssert s = new SoftAssert();
+		for (int i = 0; i < 3; i++) {
 			locations.add(getText(location_details_list.get(i)));
-			Assert.assertTrue(desired_location.contains(locations.get(i)));
+
+			if (Locations.AnnaNagar.getLocation().equals(getText(location_details_list.get(i)))) {
+				s.assertEquals(Locations.AnnaNagar.getLocation(), getText(location_details_list.get(i)));
+			} else if (Locations.Mylapore.getLocation().equals(getText(location_details_list.get(i)))) {
+				s.assertEquals(Locations.Mylapore.getLocation(), getText(location_details_list.get(i)));
+			} else if (Locations.TNagar.getLocation().equals(getText(location_details_list.get(i)))) {
+				s.assertEquals(Locations.TNagar.getLocation(), getText(location_details_list.get(i)));
+			} else {
+				s.assertTrue(false);
+			}
 		}
-		System.out.println(desired_location);
-		System.out.println(locations);
-		
+		s.assertAll();
 	}
-	
+
 	public void switchToKlips() {
 		clickElement(driver, klips_btn);
 	}
-	
+
 	public void getProfileName() {
 		profile_list = new ArrayList<>();
 		title_list = new ArrayList<>();
-		loc_list= new ArrayList<>();
-		category_list= new ArrayList<>();
-		for(int i=0;i<2;i++) {
+		loc_list = new ArrayList<>();
+		category_list = new ArrayList<>();
+		for (int i = 0; i < 2; i++) {
 			String prof_name = ExcelUtils.readExcelData(".\\src\\main\\resources\\kynhood.xlsx", "klips_data", i, 0);
-			
-			for(int j=0;j<profile_list.size();j++) {
-				if(prof_name.equals(profile_list.get(j))) {
+
+			for (int j = 0; j < profile_list.size(); j++) {
+				if (prof_name.equals(profile_list.get(j))) {
 					Assert.assertTrue(profile_list.contains(prof_name));
 				}
 			}
