@@ -2,15 +2,15 @@
 <testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-12T20:48:48 IST" name="Suite" finished-at="2024-08-12T20:49:08 IST" duration-ms="20709">
+  <suite started-at="2024-08-22T01:20:20 IST" name="Suite" finished-at="2024-08-22T01:20:32 IST" duration-ms="12125">
     <groups>
       <group name="cucumber scenarios">
         <method signature="CucumberRunner.scenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.Interview_Assessment.runner.CucumberRunner@6c6cb480]" name="scenario" class="com.Interview_Assessment.runner.CucumberRunner"/>
       </group> <!-- cucumber scenarios -->
     </groups>
-    <test started-at="2024-08-12T20:48:48 IST" name="Test" finished-at="2024-08-12T20:49:08 IST" duration-ms="20709">
+    <test started-at="2024-08-22T01:20:20 IST" name="Test" finished-at="2024-08-22T01:20:32 IST" duration-ms="12125">
       <class name="com.Interview_Assessment.runner.CucumberRunner">
-        <test-method is-config="true" signature="setUpClass(java.lang.String)[pri:0, instance:com.Interview_Assessment.runner.CucumberRunner@6c6cb480]" started-at="2024-08-12T20:48:40 IST" name="setUpClass" finished-at="2024-08-12T20:48:48 IST" duration-ms="7919" status="PASS">
+        <test-method is-config="true" signature="setUpClass(java.lang.String)[pri:0, instance:com.Interview_Assessment.runner.CucumberRunner@6c6cb480]" started-at="2024-08-22T01:20:18 IST" name="setUpClass" finished-at="2024-08-22T01:20:20 IST" duration-ms="2433" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -21,7 +21,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="scenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.Interview_Assessment.runner.CucumberRunner@6c6cb480]" started-at="2024-08-12T20:48:48 IST" name="scenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-08-12T20:48:54 IST" duration-ms="6336" status="FAIL">
+        <test-method signature="scenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.Interview_Assessment.runner.CucumberRunner@6c6cb480]" started-at="2024-08-22T01:20:20 IST" name="scenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-08-22T01:20:25 IST" duration-ms="4856" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -36,15 +36,15 @@
           </params>
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[expected [true] but found [false]]]>
+              <![CDATA[The following asserts failed:
+expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertTrue(Assert.java:45)
-at org.testng.Assert.assertTrue(Assert.java:55)
-at com.Interview_Assessment.pages.HomePage.verifyFeedLocation(HomePage.java:54)
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at com.Interview_Assessment.pages.HomePage.verifyFeedLocation(HomePage.java:68)
 at com.Interview_Assessment.stepDefinitions.StepDefinitions.user_verify_the_location_mapped_to_these_contents_is_either_or_or(StepDefinitions.java:29)
 at ✽.User verify the location mapped to these contents is either "Anna Nagar" or "Mylapore" or "T Nagar"(file:///D:/Navin_Workspace/Interview_Assessment/./src/test/resources/com/features/FeatureFiles/Kynhood_home.feature:7)
 ]]>
@@ -53,7 +53,7 @@ at ✽.User verify the location mapped to these contents is either "Anna Nagar" 
           <reporter-output>
           </reporter-output>
         </test-method> <!-- scenario -->
-        <test-method signature="scenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.Interview_Assessment.runner.CucumberRunner@6c6cb480]" started-at="2024-08-12T20:48:54 IST" name="scenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-08-12T20:49:00 IST" duration-ms="6319" status="PASS">
+        <test-method signature="scenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.Interview_Assessment.runner.CucumberRunner@6c6cb480]" started-at="2024-08-22T01:20:25 IST" name="scenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-08-22T01:20:30 IST" duration-ms="4823" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -69,11 +69,11 @@ at ✽.User verify the location mapped to these contents is either "Anna Nagar" 
           <reporter-output>
           </reporter-output>
         </test-method> <!-- scenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.Interview_Assessment.runner.CucumberRunner@6c6cb480]" started-at="2024-08-12T20:49:00 IST" name="tearDownClass" finished-at="2024-08-12T20:49:08 IST" duration-ms="7949" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.Interview_Assessment.runner.CucumberRunner@6c6cb480]" started-at="2024-08-22T01:20:30 IST" name="tearDownClass" finished-at="2024-08-22T01:20:32 IST" duration-ms="2408" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.Interview_Assessment.runner.CucumberRunner@6c6cb480]" started-at="2024-08-12T20:49:08 IST" name="closeBrowser" finished-at="2024-08-12T20:49:09 IST" duration-ms="729" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.Interview_Assessment.runner.CucumberRunner@6c6cb480]" started-at="2024-08-22T01:20:32 IST" name="closeBrowser" finished-at="2024-08-22T01:20:33 IST" duration-ms="315" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
